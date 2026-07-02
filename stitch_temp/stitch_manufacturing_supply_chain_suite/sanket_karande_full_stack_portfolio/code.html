@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanket Karande - Full-Stack Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#dbe1ff",
+                        "on-surface": "#191c1e",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container": "#eceef0",
+                        "secondary-container": "#316bf3",
+                        "tertiary-fixed-dim": "#62df7d",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "tertiary": "#000000",
+                        "tertiary-container": "#002109",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-primary": "#bec6e0",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "background": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c6c6cd",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed": "#00174b",
+                        "on-primary-container": "#7c839b",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-tertiary-fixed": "#002109",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-surface-variant": "#45464d",
+                        "secondary": "#0051d5",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-container": "#009842",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#7ffc97",
+                        "on-primary-fixed": "#131b2e",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary": "#000000",
+                        "outline": "#76777d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "section-gap": "120px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .grid-pattern {
+            background-image: linear-gradient(to right, #eceef0 1px, transparent 1px),
+                              linear-gradient(to bottom, #eceef0 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        /* Brutalist accents */
+        .brutalist-border {
+            border: 2px solid #131b2e;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #131b2e;
+            transition: all 0.2s ease-in-out;
+        }
+        .brutalist-shadow:hover {
+            box-shadow: 2px 2px 0px 0px #131b2e;
+            transform: translate(2px, 2px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface uppercase">
+                SANKET KARANDE
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors duration-200 uppercase" href="#projects">Projects</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors duration-200 uppercase" href="#skills">Skills</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary transition-colors duration-200 uppercase" href="#contact">Contact</a>
+</div>
+<a class="font-label-mono text-label-mono bg-secondary text-on-secondary px-6 py-2 brutalist-border brutalist-shadow uppercase hidden sm:block" href="#contact">
+                HIRE ME
+            </a>
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="grid-pattern min-h-screen">
+<!-- Section 1: Hero -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-24 pb-section-gap relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant mb-6">
+<span class="w-2 h-2 rounded-full bg-[#009842]"></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant uppercase">Available for production</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-background mb-6">
+                        Engineering Efficiency for <span class="text-secondary">Modern Manufacturing.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl border-l-4 border-secondary pl-4">
+                        Full-stack solutions for inventory, logistics, and shop-floor automation. Deployed at scale for clients like Tata Motors.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="font-label-mono text-label-mono bg-secondary text-on-secondary px-8 py-4 text-center brutalist-border brutalist-shadow uppercase tracking-wider" href="#projects">
+                            View Projects
+                        </a>
+<a class="font-label-mono text-label-mono bg-transparent text-primary-container px-8 py-4 text-center brutalist-border uppercase tracking-wider hover:bg-surface-container-high transition-colors" href="#contact">
+                            Contact Me
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 mt-12 lg:mt-0 relative h-[400px] lg:h-[500px]">
+<div class="absolute inset-0 bg-surface-container-high brutalist-border transform translate-x-4 translate-y-4"></div>
+<img alt="Developer Workspace" class="absolute inset-0 w-full h-full object-cover brutalist-border" data-alt="A clean, industrial-themed developer workspace. High-key lighting, bright light-mode aesthetic. A sleek monitor displays lines of code (React, Node.js) against a white background. On the desk, blueprint-style schematics for manufacturing logistics are visible. Sharp geometric lines, minimal clutter, professional, engineering focus. Palette of cool grays, pristine whites, and striking electric blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr_YN13bB0ZclHaLzN1N5iuwSVK_Ko3owAEZUCo0SChRrY1Y_RGpGQb-aeE12DaY9cZgN-xUDnF_bL13uI_kR38COBuw_Am66rF3uL_FE8m7RmAu_QCtW4YpC_u9mbTqsvb56MD94bBRGFzmHhPZLXyOOO6_9Cetd9Qz8WWjaasQBJc3lDD1_UhWe6tM-rGEjjUoLwkyGqXDzI1uQgz5V0abkinKnBlTNpuG0Hpt1si6EOdHV7RmF2qmbxEhUje8XPmF_r4oYoTWsP"/>
+</div>
+</div>
+</section>
+<!-- Section 2: Projects Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap bg-surface border-y border-outline-variant" id="projects">
+<div class="mb-12 border-b-2 border-primary-container pb-4 inline-block">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Industrial Deployments</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-1 hover:border-secondary transition-colors duration-300 group">
+<div class="h-64 bg-surface-container mb-4 relative overflow-hidden border-b border-outline-variant">
+<img alt="QR System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract representation of a digital QR code management system. Bright, clean aesthetic. Glowing electric blue geometric nodes connecting in a network overlaying a subtle, light gray industrial blueprint background. High contrast, precise, manufacturing vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwqBjCVlyWYg4xiW-EhqtUf15VV_UlAok9XtfY3JxLHbKtwiqr2kOyIsZIQWA4ZnzMqzv6LojUPkX4xgEIzpyOU8kB3BX7dOe9kM-xynJZn0I8XvooXxr98uqeC6HK9nFx2AMHIC-tFXH5bzuflcR35M4TC6gaeFwelxFa96SHWmeTxsI3nF9SPg7K7lHJzOdBfYY9b631r0QmnmeRGFr14lhgSrjc5ILtir2X5ewuKKG-mseoMnbZj0qiVBXmZuO0s1sWkC0-UKBB"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest px-2 py-1 flex items-center gap-2 border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-[#009842]"></span>
+<span class="font-label-mono text-label-mono text-on-surface-variant text-[10px]">LIVE</span>
+</div>
+</div>
+<div class="p-4">
+<span class="font-label-mono text-label-mono text-secondary uppercase mb-2 block">Enterprise SaaS</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Vendor QR Code Management System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 h-16">Enterprise invoice portal with encrypted QR verification for streamlined supply chain operations.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant border-l-2 border-l-secondary">React</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">Node.js</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">MySQL</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">Redis</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">Docker</span>
+</div>
+<div class="flex gap-4 border-t border-outline-variant pt-4">
+<a class="font-label-mono text-label-mono text-primary-container hover:text-secondary flex items-center gap-1 uppercase" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span> Live Demo
+                            </a>
+<a class="font-label-mono text-label-mono text-primary-container hover:text-secondary flex items-center gap-1 uppercase" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="code">code</span> GitHub
+                            </a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-1 hover:border-secondary transition-colors duration-300 group">
+<div class="h-64 bg-surface-container mb-4 relative overflow-hidden border-b border-outline-variant">
+<img alt="Label Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a pristine industrial printing mechanism producing compliance labels. Light mode, bright factory setting with soft white lighting. Technical, precise focus on the printed barcode and text. White and light gray color palette with electric blue highlights on the machinery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwHhvYdPGs-BnT37_peMcZ91K11D-pKdTiKtS7pUbxyEzl8EwQsqBSJX1APmJSs6YsHux8okB2klHdmK389DZKEgJD-N65znGqLMn1ydDdTRYQD5IlLygOjsOhD5dZ_QbPnZgR3QYYA6ERaJl0npuxeAIQJWwdRLC2cA6jrwGTVwwPvR63Hg4Hn760eWzjjpierFyYTHa23dJc1Oxly0pfGmkH-VX1dhkL7RXhctkFRWtCmSH5bpto-b8eVQjX6_r3uN8L4wLEXclm"/>
+</div>
+<div class="p-4">
+<span class="font-label-mono text-label-mono text-secondary uppercase mb-2 block">Compliance Tool</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3">Printy5 — Industrial Label Generator</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 h-16">Production-ready shipping & compliance label generator deployed for US-based clients.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant border-l-2 border-l-secondary">React</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">PDFKit</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">bwip-js</span>
+<span class="px-2 py-1 bg-surface-container-low font-label-mono text-[12px] text-on-surface border border-outline-variant">Node.js</span>
+</div>
+<div class="flex gap-4 border-t border-outline-variant pt-4">
+<a class="font-label-mono text-label-mono text-primary-container hover:text-secondary flex items-center gap-1 uppercase" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span> Live Demo
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary-container border-t border-outline full-width">
+<div class="flex flex-col md:flex-row justify-between items-start gap-stack-lg w-full px-gutter py-section-gap max-w-container-max mx-auto">
+<div class="max-w-sm">
+<div class="font-headline-md text-headline-md uppercase text-surface mb-4">
+                    SANKET KARANDE
+                </div>
+<p class="font-body-md text-body-md text-on-primary-container mb-6">
+                    Engineering reliable, high-fidelity systems for modern manufacturing and logistics.
+                </p>
+<div class="font-label-mono text-label-mono text-secondary-fixed uppercase">
+                    © 2024 SANKET KARANDE. READY FOR PRODUCTION.
+                </div>
+</div>
+<div class="flex gap-8">
+<a class="font-label-mono text-label-mono text-surface-variant hover:text-secondary-fixed transition-colors uppercase" href="#">Email</a>
+<a class="font-label-mono text-label-mono text-surface-variant hover:text-secondary-fixed transition-colors uppercase" href="#">GitHub</a>
+<a class="font-label-mono text-label-mono text-surface-variant hover:text-secondary-fixed transition-colors uppercase" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>
